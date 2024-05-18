@@ -2,7 +2,7 @@
 # StrokePrediction_Model
 ## About
 
-* [Google Colab Tutorial Notebook]()
+* [Google Colab Tutorial Notebook](StrokePredictionModel.ipynb)
 
 ## Introduction
 
