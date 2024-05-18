@@ -2,6 +2,7 @@
 # StrokePrediction_Model
 ## About
 
+This project
 * [Google Colab Tutorial Notebook](https://colab.research.google.com/github/jlee92603/StrokePrediction_Model/blob/main/StrokePredictionModel.ipynb)
 
 ## Introduction
