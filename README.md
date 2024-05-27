@@ -718,15 +718,253 @@ def feature_importances(models, labels, x, y):
 
 ## Build, Test, Evaluate Models
 ### Cohort A
+
+```
+# split train, valid, and test data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainA)
+
+# build and test model for each type
+test_scores_A, Amodels = build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test)
+
+# visualize feature importances for each model
+feature_importances(Amodels, x_train.columns, x_train, y_train)
+```
+
+<img width="498" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 09 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/29d257c1-d213-4d55-a41b-3430fec7b918">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 10 04 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e324adec-2672-4560-8d6f-e9f9997c14ab">
+
 ### Cohort B
+
+```
+# split train, valid, and test data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainB)
+
+# build and test model for each type
+test_scores_B, Bmodels = build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test)
+
+# visualize feature importances for each model
+feature_importances(Bmodels, x_train.columns, x_train, y_train)
+```
+
+<img width="504" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 10 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f99e1a44-a3f0-4f83-bf1d-33d6510c5d00">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 10 42 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/beb1838e-8807-4926-95d1-c1006ddfe7ea">
+
 ### Cohort C
+
+```
+# split train, valid, and test data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainC)
+
+# build and test model for each type
+test_scores_C, Cmodels = build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test)
+
+# visualize feature importances for each model
+feature_importances(Cmodels, x_train.columns, x_train, y_train)
+```
+<img width="501" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 11 30 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a1c60f20-1446-4775-bab0-0010631a6b11">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 11 50 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b52c0238-8c19-45ed-82f5-0be5f972e328">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 12 20 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/3675c0e2-13b4-4f1e-bb72-40c2094223fe">
+
 ### Cohort D
+
+```
+# split train, valid, and test data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainD)
+
+# build and test model for each type
+test_scores_D, Dmodels = build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test)
+
+# visualize feature importances for each model
+feature_importances(Dmodels, x_train.columns, x_train, y_train)
+```
+
+<img width="498" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 13 06 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/96e8a287-c0c8-41c1-894d-a3d5e460a358">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 13 26 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e7c6af49-2a76-4be8-bb09-fedae3a59f46">
+
 ### Cohort E
+
+```
+# split train, valid, and test data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
+
+# build and test model for each type
+test_scores_E, Emodels = build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test)
+
+# visualize feature importances for each model
+feature_importances(Emodels, x_train.columns, x_train, y_train)
+```
+
+<img width="495" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 14 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a6f6db96-2a30-433b-9e3d-5ac74727ff5d">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 14 47 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2973e07f-d9ba-4ec5-aa9d-0733f43c3275">
+
+<img width="314" alt="Screen Shot 2024-05-27 at 6 15 05 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2c17e05-2273-4929-9e69-72ead863342c">
+
 ### Model Comparisons
+
+```
+test_scores = [test_scores_A, test_scores_B, test_scores_C, test_scores_D, test_scores_E]
+
+print("\nTest Testing Accuracy for Various Classifier with Different DataSets: ")
+print("===============================================================================")
+
+comparison_result = pd.DataFrame(data=[['Random Forrest',test_scores[0][0], test_scores[1][0], test_scores[2][0], test_scores[3][0], test_scores[4][0]],
+                                  ['XGB',test_scores[0]
+                                  [1], test_scores[1][1], test_scores[2][1], test_scores[3][1], test_scores[4][1]],
+                                  ["Logistic Regression", test_scores[0][2], test_scores[1][2], test_scores[2][2], test_scores[3][2], test_scores[4][2]],
+                                  ['TabNet', test_scores[0][3], test_scores[1][3], test_scores[2][3], test_scores[3][3], test_scores[4][3]]],
+                            columns=['Model', 'Cohort A', 'Cohort B', 'Cohort C', 'Cohort D', 'Cohort E'])
+print(comparison_result)
+print("===============================================================================")
+print("\n A: none \n B: age*bmi \n C: age*avg_glucose_level \n D: bmi*avg_glucose_level \n E: B,C,D together")
+```
+
+<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+
 ## Using Tabnet Architecture
+
 ### Cohort 0
+
+```
+# split data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
+
+# compile tabnet model
+TabNetModel = compile_TabNet(x_train, y_train, x_valid, y_valid,
+                             optimizer=torch.optim.Adam, step_size=10, gamma=0.9,
+                             eval_met='accuracy', patience=60, batch_size=512)
+
+# test and evaluate model
+pred=TabNetModel.predict(x_test.values)
+report0 = pd.DataFrame(classification_report(y_test, pred, output_dict=True))
+accuracy0 = accuracy_score(y_test, pred)
+
+# print results
+print("\n\nTest Result for TabNet Classifier: ")
+print("================================================")
+print(f"Accuracy Score: {accuracy0 * 100:.2f}%")
+print("_______________________________________________")
+print(f"CLASSIFICATION REPORT:\n{report0}")
+print("_______________________________________________")
+print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
+```
+
+<img width="318" alt="Screen Shot 2024-05-27 at 6 16 08 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a91e7f13-b6b0-4d69-b42c-58d6b4049e3c">
+
 ### Cohort 1
+
+```
+# split data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
+
+# compile tabnet model
+TabNetModel = compile_TabNet(x_train, y_train, x_valid, y_valid,
+                             optimizer=torch.optim.SGD, step_size=10, gamma=0.9,
+                             eval_met='accuracy', patience=60, batch_size=512)
+
+# test and evaluate model
+pred=TabNetModel.predict(x_test.values)
+report1 = pd.DataFrame(classification_report(y_test, pred, output_dict=True))
+accuracy1 = accuracy_score(y_test, pred)
+
+# print results
+print("\n\nTest Result for TabNet Classifier: ")
+print("================================================")
+print(f"Accuracy Score: {accuracy1 * 100:.2f}%")
+print("_______________________________________________")
+print(f"CLASSIFICATION REPORT:\n{report1}")
+print("_______________________________________________")
+print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
+```
+
+<img width="318" alt="Screen Shot 2024-05-27 at 6 16 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/13dc0c1c-a9d5-44ff-ad63-9929037f6d05">
+
 ### Cohort 2
+
+```
+# split data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
+
+# compile tabnet model
+TabNetModel = compile_TabNet(x_train, y_train, x_valid, y_valid,
+                             optimizer=torch.optim.Adam, step_size=10, gamma=0.9,
+                             eval_met='accuracy', patience=10, batch_size=216)
+
+# test and evaluate model
+pred=TabNetModel.predict(x_test.values)
+report2 = pd.DataFrame(classification_report(y_test, pred, output_dict=True))
+accuracy2 = accuracy_score(y_test, pred)
+
+# print results
+print("\n\nTest Result for TabNet Classifier: ")
+print("================================================")
+print(f"Accuracy Score: {accuracy2 * 100:.2f}%")
+print("_______________________________________________")
+print(f"CLASSIFICATION REPORT:\n{report2}")
+print("_______________________________________________")
+print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
+```
+
+<img width="322" alt="Screen Shot 2024-05-27 at 6 16 59 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/57138744-ec66-44da-8a17-2113d576fff2">
+
 ### Cohort 3
+
+```
+# split data
+x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
+
+# compile tabnet model
+TabNetModel = compile_TabNet(x_train, y_train, x_valid, y_valid,
+                             optimizer=torch.optim.Adam, step_size=5, gamma=0.95,
+                             eval_met='accuracy', patience=60, batch_size=512)
+
+# test and evaluate model
+pred=TabNetModel.predict(x_test.values)
+report3 = pd.DataFrame(classification_report(y_test, pred, output_dict=True))
+accuracy3 = accuracy_score(y_test, pred)
+
+# print results
+print("\n\nTest Result for TabNet Classifier: ")
+print("================================================")
+print(f"Accuracy Score: {accuracy3 * 100:.2f}%")
+print("_______________________________________________")
+print(f"CLASSIFICATION REPORT:\n{report3}")
+print("_______________________________________________")
+print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
+```
+
+<img width="316" alt="Screen Shot 2024-05-27 at 6 17 22 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f23b8af3-66af-48ef-8cb8-87b3c52e5987">
+
 ### Tabnet Comparisons
+
+```
+print("\nTest Testing Accuracy for TabNet with Various Parameters: ")
+print("==========================================================")
+
+comparison_result = pd.DataFrame(data=[['TabNet', accuracy0, accuracy1, accuracy2, accuracy3]],
+                            columns=['Model','Cohort 0', 'Cohort 1', 'Cohort 2', 'Cohort 3'])
+print(comparison_result)
+print("==========================================================")
+print("\n 0: Original \n 1: SGB optimizer \n 2: Small batchsize \n 3: Small StepSize, Big Gamma")
+```
+
+<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
+
 ## Conclusions
+
+
