@@ -117,7 +117,11 @@ train.describe()
 
 <img width="914" alt="Screen Shot 2024-05-27 at 4 51 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/fefa3286-09bd-4158-9d67-6302dea6971f">
 
+<br>
+
 <img width="334" alt="Screen Shot 2024-05-27 at 4 51 18 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/51f6a00b-ce7b-4c7c-a47a-28da2048b983">
+
+<br>
 
 <img width="695" alt="Screen Shot 2024-05-27 at 4 51 27 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/c5fbbe54-3d83-4cda-9c2a-5709442be3b4">
 
@@ -264,6 +268,8 @@ plt.show()
 
 <img width="681" alt="Screen Shot 2024-05-27 at 6 24 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/64ad23dd-ebde-4d21-b0a2-f72403e0baea">
 
+<br>
+
 <img width="674" alt="Screen Shot 2024-05-27 at 5 59 39 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/d19e5b95-8254-4b37-91c6-f5af13d8249d">
 
 ### Distribution by Stroke
@@ -348,6 +354,8 @@ plt.show()
 ```
 
 <img width="715" alt="Screen Shot 2024-05-27 at 6 00 19 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/79ce2238-f342-4854-a285-1a1e47bd3bae">
+
+<br>
 
 <img width="715" alt="Screen Shot 2024-05-27 at 6 00 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ccd3066e-f014-44d2-b591-d5b03a879381">
 
@@ -731,11 +739,15 @@ test_scores_A, Amodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Amodels, x_train.columns, x_train, y_train)
 ```
 
-<img width="498" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
-
 <img width="314" alt="Screen Shot 2024-05-27 at 6 09 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/29d257c1-d213-4d55-a41b-3430fec7b918">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 10 04 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e324adec-2672-4560-8d6f-e9f9997c14ab">
+
+<br>
+
+<img width="498" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
 
 ### Cohort B
 
@@ -750,11 +762,15 @@ test_scores_B, Bmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Bmodels, x_train.columns, x_train, y_train)
 ```
 
-<img width="504" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
-
 <img width="314" alt="Screen Shot 2024-05-27 at 6 10 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f99e1a44-a3f0-4f83-bf1d-33d6510c5d00">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 10 42 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/beb1838e-8807-4926-95d1-c1006ddfe7ea">
+
+<br>
+
+<img width="504" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
 
 ### Cohort C
 
@@ -768,13 +784,20 @@ test_scores_C, Cmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 # visualize feature importances for each model
 feature_importances(Cmodels, x_train.columns, x_train, y_train)
 ```
-<img width="501" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
 
 <img width="314" alt="Screen Shot 2024-05-27 at 6 11 30 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a1c60f20-1446-4775-bab0-0010631a6b11">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 11 50 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b52c0238-8c19-45ed-82f5-0be5f972e328">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 12 20 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/3675c0e2-13b4-4f1e-bb72-40c2094223fe">
+
+<br>
+
+<img width="501" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
 
 ### Cohort D
 
@@ -789,11 +812,15 @@ test_scores_D, Dmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Dmodels, x_train.columns, x_train, y_train)
 ```
 
-<img width="498" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
-
 <img width="314" alt="Screen Shot 2024-05-27 at 6 13 06 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/96e8a287-c0c8-41c1-894d-a3d5e460a358">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 13 26 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e7c6af49-2a76-4be8-bb09-fedae3a59f46">
+
+<br>
+
+<img width="498" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
 
 ### Cohort E
 
@@ -808,13 +835,19 @@ test_scores_E, Emodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Emodels, x_train.columns, x_train, y_train)
 ```
 
-<img width="495" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
-
 <img width="314" alt="Screen Shot 2024-05-27 at 6 14 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a6f6db96-2a30-433b-9e3d-5ac74727ff5d">
+
+<br>
 
 <img width="314" alt="Screen Shot 2024-05-27 at 6 14 47 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2973e07f-d9ba-4ec5-aa9d-0733f43c3275">
 
+<br>
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 15 05 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2c17e05-2273-4929-9e69-72ead863342c">
+
+<br>
+
+<img width="495" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
 
 ### Model Comparisons
 
