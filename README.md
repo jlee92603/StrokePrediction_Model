@@ -119,7 +119,7 @@ train.describe()
 
 <br>
 
-<img width="334" alt="Screen Shot 2024-05-27 at 4 51 18 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/51f6a00b-ce7b-4c7c-a47a-28da2048b983">
+<img width="312" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
 
 <br>
 
