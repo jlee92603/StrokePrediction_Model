@@ -261,7 +261,8 @@ plt.figtext(0.5, 0.98, 'Categorical features distribution',
             fontweight='bold',size=22, color='#444444', ha='center')
 plt.show()
 ```
-<img width="674" alt="Screen Shot 2024-05-27 at 5 59 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/13bf03da-bec4-481b-94df-cb68d7564413">
+
+<img width="681" alt="Screen Shot 2024-05-27 at 6 24 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/64ad23dd-ebde-4d21-b0a2-f72403e0baea">
 
 <img width="674" alt="Screen Shot 2024-05-27 at 5 59 39 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/d19e5b95-8254-4b37-91c6-f5af13d8249d">
 
