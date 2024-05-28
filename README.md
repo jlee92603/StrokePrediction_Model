@@ -147,7 +147,7 @@ _First couple patient data displayed_
 
 <br>
 
-_Column data_
+_Variables in Dataset_
 
 <img width="312" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
 
@@ -757,6 +757,9 @@ def feature_importances(models, labels, x, y):
 ```
 
 ## Build, Test, Evaluate Models
+
+The following cohorts, the Tabnet model use an Adam optimizer with a stepsize of 10, gamma of 0.9, patience of 60, and a batchsize of 512. 
+
 ### Cohort A
 
 ```
@@ -931,9 +934,13 @@ print("\n A: none \n B: age*bmi \n C: age*avg_glucose_level \n D: bmi*avg_glucos
 
 ## Using Tabnet Architecture
 
+For the following cohorts, the dataset from cohort E is used. With Cohort E, Tabnet models with various hyperparameters are evaluated. 
+
+Optimize is the algorithm or method used to adjust the weights of the neural network in order to minimize the loss function during training. Stepsize is the learning rate, which controls how much the model's weights change with respect to the gradient of the loss function. High learning rate allows for faster convergence, but may overshoot the optimal solution while a slower learning rate ensures stable convergence but may not find optimal solution before stopping. Patience specifies the number of epochs to wait before stopping the training if no improvement observed. It is used in early stopping strategies. Gamma is the parameter that defines the rate of decay for the learning rate. It helps fine tune the model and prevent overshooting. Batch size is the number of training examples utilized in one iteration during the training process. A smaller batch size provides more accurate estimate of the gradient but is computationally expensive and can slow down the training and vice versa for a larger batch size. 
+
 ### Cohort 0
 
-For the following cohorts, 
+Cohort 0 uses an Adam optimizer with stepsize 10, gamma of 0.9, patience of 60, and batchsize of 512. 
 
 ```
 # split data
@@ -963,6 +970,8 @@ print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 
 ### Cohort 1
 
+Cohort 1 uses an SGD optimizer with stepsize 10, gamma of 0.9, patience of 60, and batchsize of 512. 
+
 ```
 # split data
 x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
@@ -991,6 +1000,8 @@ print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 
 ### Cohort 2
 
+Cohort 0 uses an Adam optimizer with stepsize 10, gamma of 0.9, patience of 10, and batchsize of 256. 
+
 ```
 # split data
 x_train, y_train, x_valid, y_valid, x_test, y_test = split_data(trainE)
@@ -1018,6 +1029,8 @@ print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 <img width="322" alt="Screen Shot 2024-05-27 at 6 16 59 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/57138744-ec66-44da-8a17-2113d576fff2">
 
 ### Cohort 3
+
+Cohort 3 uses an Adam optimizer with stepsize 5, gamma of 0.95, patience of 60, and batchsize of 512. 
 
 ```
 # split data
@@ -1062,4 +1075,13 @@ print("\n 0: Original \n 1: SGB optimizer \n 2: Small batchsize \n 3: Small Step
 
 ## Conclusions
 
+To summarize the results, with Random Forest, Cohort E (all the engineered features together) performed the best with an accuracy of 95.77. With XGBoost, Cohort A (no features engineered) performed the best with an accuracy of 95.28. With Logistic Regression, Cohort B (age*BMI) performed the best with an accuracy of 95.81. With Tabnet, Cohort E performed the best with an accuracy of 89.15. And within all the classifiers, Logistic Regression had the best overal accuracy values, with Cohort B in Logistic Regression giving the highest accuracy amongst all the models. 
+
+<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+
+To summarize the results for Tabnet, Cohort 0 had the highest accuracy. 
+
+<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
+
+Other considerations. 
 
