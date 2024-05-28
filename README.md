@@ -2,10 +2,31 @@
 # StrokePrediction_Model
 ## About
 
-This project
+This project builds and compiles various models to predict the event of stroke in a patient based on their health records. Several patient features included age, BMI, hypertension, heart disease, average glucose level, etc. Feature engineering is explored in this project, where the effect of the relationship between different important features is investigated and new variables are built based on these relationships. Additionally, in this project, the Tabnet model architecture is explored by testing various hyperparameters.
+
+The tutorial code and details can be accessed on the Google Colab Notebook (link below). The README provides an explanation of the set up, the functions used, the models created, the features engineered, and the model performance comparisons. 
+
 * [Google Colab Tutorial Notebook](https://colab.research.google.com/github/jlee92603/StrokePrediction_Model/blob/main/StrokePredictionModel.ipynb)
 
 ## Introduction
+
+The objective of this project is to investigate the tutilization of tabular datasets, data enocoding, feature engineering, and model algorithms for the prediction of stroke events in patients. 
+
+When dealing with tabular datasets, some of the data may be categorical. To deal with categorical data, one hot encoding is used by changing the categories for a features into separate features. For instance, if there is a categorical variable 'gender' with categories 'female' and 'male', these categories would be changed into separate variables. In the case of 2 categories, only one variable is required. There would be a new category 'male' where 0 indicates 'not male' (which is equivalent to 'female') and 1 indicates 'male'. In addition to one hot encoding, numerical data is scaled and standardized. 
+
+Feature engineering is the process of using domain knowledge to create new input features from raw data to improve the performance of the models. It involves transforming, selecting, and creating new variables that can help the model better understand patterns in the data. It can help improve model accuracy, handle heterogeneous data, deal with missing data, enhance interpretability, and improve generalization. In this project, interaction terms were generated, where several features were combined to capture interactions. For instance, there could be association between age and average glucose levels; hence, these two features would be multiplied to create a new feature that incorporates the relationship between the two variables. 
+
+In order to predict the event of stroke, Random Forst, XGBoost, Logistic Regression, and Tabnet learning algorithms are used. Random forest is an ensemble learning method that builds multiple decision trees. XGBoost is an advanced implementation of gradient boosting. It builds models in a stage-wise manner by sequentially adding new models that correct errors made by the previous models. Logistic regression is a statistical model that uses a logistic function to model a binary dependent variable. It predicts the probability of the outcome variable. Tabnet is a deep learning architecture specifically for tabular data. It incorporates the advantage of decision trees and neural networks to efficiently handle tabular datasets. 
+
+Accuracy metrics are used for each cohort that tested various engineered features and hyperparameters. In summary, the results are as follows: 
+
+_Model evaluation for various classifiers with different feature engineered datasets:_
+
+<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+
+_Model evaluation for TabNet architecture with various parameters:_
+
+<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
 
 ---
 ## Table of Contents
@@ -25,6 +46,11 @@ This project
     - [Feature Engineering](#Feature-Engineering)
     - [Data Split](#Data-Split)
 - [Necessary Functions](#Necessary-Functions)
+    - [Tabnet Compilation Function](#Tabnet-Compilation-Function)
+    - [Result Display Function](#Result-Display-Function)
+    - [Score Comparison Function](#Score-Comparison-Function)
+    - [Model Building Function](#Model-Building-Function)
+    - [Feature Importance Plot Function](#Feature-Importance-Plot-Function)
 - [Build, Test, Evaluate Models](#Build,-Test,-Evaluate-Models)
     - [Cohort A](#Cohort-A)
     - [Cohort B](#Cohort-A)
@@ -115,13 +141,19 @@ train.info()
 train.describe()
 ```
 
+_First couple patient data displayed_
+
 <img width="914" alt="Screen Shot 2024-05-27 at 4 51 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/fefa3286-09bd-4158-9d67-6302dea6971f">
 
 <br>
 
+_Column data_
+
 <img width="312" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
 
 <br>
+
+_Statistics for Training Dataset_
 
 <img width="695" alt="Screen Shot 2024-05-27 at 4 51 27 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/c5fbbe54-3d83-4cda-9c2a-5709442be3b4">
 
@@ -525,26 +557,9 @@ def split_data(train):
 
 ## Necessary Functions
 
+### Tabnet Compilation Function
+
 ```
-# recall metrics for TabNet classifier
-class myRecall(Metric):
-    def __init__(self):
-        self._name = "recall"
-        self._maximize = True
-
-    def __call__(self, y_true, y_score):
-
-        np.array(y_true)
-        y_score_np = np.array(y_score[:, 1])
-
-        # make score binary (2 classes)
-        y_score_np[y_score_np < 0.5] = 0
-        y_score_np[y_score_np >= 0.5] = 1
-
-        # get recall score
-        rs = recall_score(y_true, y_score_np)
-        return rs
-
 # function to compile tabnet model
 # inputs: training data, training labels, validation data, validation labels,
 # optimizer type step size, gamma, evaluation metrics, patience, batch size
@@ -573,7 +588,11 @@ def compile_TabNet(x_train, y_train, x_test, y_test, optimizer=torch.optim.Adam,
   )
 
   return tbnt
+```
 
+### Result Display Function
+
+```
 # print evaluation scores for each type of classifier
 # inputs: testing data, testing labels, evaluation metric name, eval metric
 def print_score(clf, x_test, y_test, eval_name='Accuracy', metric=accuracy_score):
@@ -587,7 +606,11 @@ def print_score(clf, x_test, y_test, eval_name='Accuracy', metric=accuracy_score
   print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 
 score=[]
+```
 
+### Score Comparison Function
+
+```
 # function to compare logistic regression, random forest, xgb accuracy
 def compare_scores(x_test, y_test, rf, xgb, lgr, metric=accuracy_score):
 
@@ -608,7 +631,11 @@ def compare_scores(x_test, y_test, rf, xgb, lgr, metric=accuracy_score):
 
   test_scores = [rf_test_score, xgb_test_score, log_test_score]
   return test_scores
+```
 
+### Model Building Function
+
+```
 # function to build, test, and compare different classifier models
 def build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test, metric=accuracy_score, optimizer=torch.optim.Adam,
                    step_size=10, gamma=0.9, eval_met='accuracy', eval_name = "Accuracy",
@@ -672,7 +699,11 @@ def build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test, metric
   print(results_df)
 
   return test_scores, models
+```
 
+### Feature Importance Plot Function
+
+```
 # plot feature importances
 def feature_importances(models, labels, x, y):
 
@@ -739,6 +770,8 @@ test_scores_A, Amodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Amodels, x_train.columns, x_train, y_train)
 ```
 
+_Test Results for Each Classifier_
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 09 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/29d257c1-d213-4d55-a41b-3430fec7b918">
 
 <br>
@@ -747,9 +780,13 @@ feature_importances(Amodels, x_train.columns, x_train, y_train)
 
 <br>
 
+_Feature Importances for Each Classifier_
+
 <img width="498" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
 
 ### Cohort B
+
+Cohort B explores the relationship between age and BMI. A new feature is engineering by multiplying these two variables together. 
 
 ```
 # split train, valid, and test data
@@ -762,6 +799,8 @@ test_scores_B, Bmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Bmodels, x_train.columns, x_train, y_train)
 ```
 
+_Test Results for Each Classifier_
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 10 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f99e1a44-a3f0-4f83-bf1d-33d6510c5d00">
 
 <br>
@@ -770,9 +809,13 @@ feature_importances(Bmodels, x_train.columns, x_train, y_train)
 
 <br>
 
+_Feature Importances for Each Classifier_
+
 <img width="504" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
 
 ### Cohort C
+
+Cohort C explores the relationship between age and average glucose level. A new feature is engineering by multiplying these two variables together. 
 
 ```
 # split train, valid, and test data
@@ -784,6 +827,8 @@ test_scores_C, Cmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 # visualize feature importances for each model
 feature_importances(Cmodels, x_train.columns, x_train, y_train)
 ```
+
+_Test Results for Each Classifier_
 
 <img width="314" alt="Screen Shot 2024-05-27 at 6 11 30 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a1c60f20-1446-4775-bab0-0010631a6b11">
 
@@ -797,9 +842,13 @@ feature_importances(Cmodels, x_train.columns, x_train, y_train)
 
 <br>
 
+_Feature Importances for Each Classifier_
+
 <img width="501" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
 
 ### Cohort D
+
+Cohort D explores the relationship between BMI and average glucose level. A new feature is engineering by multiplying these two variables together. 
 
 ```
 # split train, valid, and test data
@@ -812,6 +861,8 @@ test_scores_D, Dmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Dmodels, x_train.columns, x_train, y_train)
 ```
 
+_Test Results for Each Classifier_
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 13 06 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/96e8a287-c0c8-41c1-894d-a3d5e460a358">
 
 <br>
@@ -820,9 +871,13 @@ feature_importances(Dmodels, x_train.columns, x_train, y_train)
 
 <br>
 
+_Feature Importances for Each Classifier_
+
 <img width="498" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
 
 ### Cohort E
+
+Cohort E explores the the features engineered in Cohort B, C, and D. 3 new features are engineering by multiplying age and BMI, age and average glucose level, and BMI and average glucose level. 
 
 ```
 # split train, valid, and test data
@@ -835,6 +890,8 @@ test_scores_E, Emodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Emodels, x_train.columns, x_train, y_train)
 ```
 
+_Test Results for Each Classifier_
+
 <img width="314" alt="Screen Shot 2024-05-27 at 6 14 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a6f6db96-2a30-433b-9e3d-5ac74727ff5d">
 
 <br>
@@ -846,6 +903,8 @@ feature_importances(Emodels, x_train.columns, x_train, y_train)
 <img width="314" alt="Screen Shot 2024-05-27 at 6 15 05 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2c17e05-2273-4929-9e69-72ead863342c">
 
 <br>
+
+_Feature Importances for Each Classifier_
 
 <img width="495" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
 
@@ -873,6 +932,8 @@ print("\n A: none \n B: age*bmi \n C: age*avg_glucose_level \n D: bmi*avg_glucos
 ## Using Tabnet Architecture
 
 ### Cohort 0
+
+For the following cohorts, 
 
 ```
 # split data
