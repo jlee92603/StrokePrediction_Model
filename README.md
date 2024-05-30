@@ -10,11 +10,11 @@ The tutorial code and details can be accessed on the Google Colab Notebook (link
 
 ## Introduction
 
-The objective of this project is to investigate the tutilization of tabular datasets, data enocoding, feature engineering, and model algorithms for the prediction of stroke events in patients. 
+The objective of this project is to investigate the utilization of tabular datasets, data enocoding, feature engineering, and model algorithms for the prediction of stroke events in patients. 
 
-When dealing with tabular datasets, some of the data may be categorical. To deal with categorical data, one hot encoding is used by changing the categories for a features into separate features. For instance, if there is a categorical variable 'gender' with categories 'female' and 'male', these categories would be changed into separate variables. In the case of 2 categories, only one variable is required. There would be a new category 'male' where 0 indicates 'not male' (which is equivalent to 'female') and 1 indicates 'male'. In addition to one hot encoding, numerical data is scaled and standardized. 
+Data encoding is necessary when dealing with tabular datasets as tabular datasets incorporate both categorical and numerical data. To deal with categorical data, one hot encoding is used by changing the categories for a features into separate features. For instance, if there is a categorical variable 'gender' with categories 'female' and 'male', these categories would be changed into separate variables. In the case of 2 categories, only one variable is required. There would be a new category 'male' where 0 indicates 'not male' (which is equivalent to 'female') and 1 indicates 'male'. As for numerical data, numerical values are scaled and standardized. 
 
-Feature engineering is the process of using domain knowledge to create new input features from raw data to improve the performance of the models. It involves transforming, selecting, and creating new variables that can help the model better understand patterns in the data. It can help improve model accuracy, handle heterogeneous data, deal with missing data, enhance interpretability, and improve generalization. In this project, interaction terms were generated, where several features were combined to capture interactions. For instance, there could be association between age and average glucose levels; hence, these two features would be multiplied to create a new feature that incorporates the relationship between the two variables. 
+Feature engineering is the process of using domain knowledge to create new input features from raw data to improve the performance of the models. It involves transforming, selecting, and creating new variables that can help the model better understand patterns in the data. It can help improve model accuracy, handle heterogeneous data, deal with missing data, enhance interpretability, and improve generalization. In this project, interaction terms are generated, where several features were combined to capture interactions. For instance, there could be association between age and average glucose levels; hence, these two features would be multiplied to create a new feature that incorporates the relationship between the two variables. 
 
 In order to predict the event of stroke, Random Forst, XGBoost, Logistic Regression, and Tabnet learning algorithms are used. Random forest is an ensemble learning method that builds multiple decision trees. XGBoost is an advanced implementation of gradient boosting. It builds models in a stage-wise manner by sequentially adding new models that correct errors made by the previous models. Logistic regression is a statistical model that uses a logistic function to model a binary dependent variable. It predicts the probability of the outcome variable. Tabnet is a deep learning architecture specifically for tabular data. It incorporates the advantage of decision trees and neural networks to efficiently handle tabular datasets. 
 
@@ -66,20 +66,19 @@ _Table 1.2: Model evaluation for TabNet architecture with various parameters:_
     - [Tabnet Comparisons](#Tabnet-Comparisons)
 - [Conclusions](#Conclusions)
 
-
 ---
 ## Getting Started
-This convolutional neural network is coded with the Python's Tensorflow Keras package on Google Colab. 
 
 ### Installations
 Important libraries to install are:
-* pytorch_tabnet
+* pytorch-tabnet
+* scikit-learn
 
 ### Downloading Dataset
 The brain tumor dataset is acquired from [Kaggle Stroke Prediction Tabular Dataset](https://www.kaggle.com/competitions/playground-series-s3e2/overview). This dataset includes 2 csv files, a training data set where stroke is the binary target and a testing data set where the objective is to predict the probability of positive stroke. The training data csv file consists of tabular data with 10 features for each of the 15304 patients: gender, age, hypertension, heart disease, marriage status, work type, residence type, average glucose level, BMI, and smoking status, and whether the patient has stroke or not. 
 
 ### Connecting Drive and GPU
-The dataset is downloaded and uploaded on to Google Drive, which is connected to the Colab notebook. Additionally, Google Colab's T4 GPU is connected for faster model fitting. Google Colab's GPU can be connected by changing runtime type. 
+
 ```
 # Mount Google Drive
 from google.colab import drive
@@ -94,7 +93,8 @@ print('Found GPU at: {}'.format(device_name))
 ```
 
 ### Importing Libraries
-The following packages are imported: 
+The following Python packages are imported: 
+
 ```
 import numpy as np
 import pandas as pd # data processing
@@ -953,7 +953,7 @@ _Table 5.6: Comparison of testing accuracy for each classifier and cohort_
 
 For the following cohorts, the dataset from cohort E is used. With Cohort E, Tabnet models with various hyperparameters are evaluated. 
 
-Optimize is the algorithm or method used to adjust the weights of the neural network in order to minimize the loss function during training. Stepsize is the learning rate, which controls how much the model's weights change with respect to the gradient of the loss function. High learning rate allows for faster convergence, but may overshoot the optimal solution while a slower learning rate ensures stable convergence but may not find optimal solution before stopping. Patience specifies the number of epochs to wait before stopping the training if no improvement observed. It is used in early stopping strategies. Gamma is the parameter that defines the rate of decay for the learning rate. It helps fine tune the model and prevent overshooting. Batch size is the number of training examples utilized in one iteration during the training process. A smaller batch size provides more accurate estimate of the gradient but is computationally expensive and can slow down the training and vice versa for a larger batch size. 
+An optimizer is the algorithm or method used to adjust the weights of the neural network in order to minimize the loss function during training. The stepsize is the learning rate, which controls how much the model's weights change with respect to the gradient of the loss function. High learning rate allows for faster convergence, but may overshoot the optimal solution while a slower learning rate ensures stable convergence but may not find optimal solution before stopping. Patience specifies the number of epochs to wait before stopping the training if no improvement observed. It is used in early stopping strategies. Gamma is the parameter that defines the rate of decay for the learning rate. It helps fine tune the model and prevent overshooting. Batch size is the number of training examples utilized in one iteration during the training process. A smaller batch size provides more accurate estimate of the gradient but is computationally expensive and can slow down the training and vice versa for a larger batch size. 
 
 ### Cohort 0
 
@@ -1109,6 +1109,4 @@ To summarize the results, with Random Forest, Cohort E (all the engineered featu
 To summarize the results for Tabnet, Cohort 0 had the highest accuracy. 
 
 <img width="475" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
-
-Other considerations. 
 
