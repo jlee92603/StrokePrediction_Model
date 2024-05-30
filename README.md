@@ -20,13 +20,13 @@ In order to predict the event of stroke, Random Forst, XGBoost, Logistic Regress
 
 Accuracy metrics are used for each cohort that tested various engineered features and hyperparameters. In summary, the results are as follows: 
 
-_Model evaluation for various classifiers with different feature engineered datasets:_
+_Table 1.1: Model evaluation for various classifiers with different feature engineered datasets:_
 
-<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+<img width="650" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
 
-_Model evaluation for TabNet architecture with various parameters:_
+_Table 1.2: Model evaluation for TabNet architecture with various parameters:_
 
-<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
+<img width="475" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
 
 ---
 ## Table of Contents
@@ -141,21 +141,21 @@ train.info()
 train.describe()
 ```
 
-_First couple patient data displayed_
+_Table 2.1: First couple patient data displayed_
 
-<img width="914" alt="Screen Shot 2024-05-27 at 4 51 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/fefa3286-09bd-4158-9d67-6302dea6971f">
-
-<br>
-
-_Variables in Dataset_
-
-<img width="312" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
+<img width="1100" alt="Screen Shot 2024-05-27 at 4 51 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/fefa3286-09bd-4158-9d67-6302dea6971f">
 
 <br>
 
-_Statistics for Training Dataset_
+_Table 2.2: Variables in Dataset_
 
-<img width="695" alt="Screen Shot 2024-05-27 at 4 51 27 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/c5fbbe54-3d83-4cda-9c2a-5709442be3b4">
+<img width="500" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
+
+<br>
+
+_Table 2.3: Statistics for Training Dataset_
+
+<img width="1100" alt="Screen Shot 2024-05-27 at 4 51 27 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/c5fbbe54-3d83-4cda-9c2a-5709442be3b4">
 
 ### Distribution by Gender
 
@@ -175,7 +175,10 @@ plt.subplot(2,2,4)
 sns.countplot(x=train['stroke'])
 ```
 
-<img width="687" alt="Screen Shot 2024-05-27 at 5 57 38 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/894bfe2f-45c8-4d1e-b0b5-50b24adb031e">
+_Figure 3.1: Bar plot of distribution of age, hypertension, and heart disease by gender_
+_(Lower right) bar plot of stroke_
+
+<img width="900" alt="Screen Shot 2024-05-27 at 5 57 38 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/894bfe2f-45c8-4d1e-b0b5-50b24adb031e">
 
 ### Kernel Density Estimates
 
@@ -218,7 +221,9 @@ plt.figtext(0.5, 1.1, 'Numerical features distribution',
 plt.show()
 ```
 
-<img width="671" alt="Screen Shot 2024-05-27 at 5 58 17 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/5c062b0a-fc24-4985-8e67-f1914cae1f13">
+_Figure 3.2: KDE of age, average glucose level, and bmi_
+
+<img width="900" alt="Screen Shot 2024-05-27 at 5 58 17 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/5c062b0a-fc24-4985-8e67-f1914cae1f13">
 
 ### Distribution by Train vs Test
 
@@ -298,11 +303,13 @@ plt.figtext(0.5, 0.98, 'Categorical features distribution',
 plt.show()
 ```
 
-<img width="681" alt="Screen Shot 2024-05-27 at 6 24 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/64ad23dd-ebde-4d21-b0a2-f72403e0baea">
+_Figure 3.3: Bar plot of distribution of heart disease, residence type, hypertensions, work type, smoking status, gender, and marriage status by train versus testing data sets_
+
+<img width="900" alt="Screen Shot 2024-05-27 at 6 24 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/64ad23dd-ebde-4d21-b0a2-f72403e0baea">
 
 <br>
 
-<img width="674" alt="Screen Shot 2024-05-27 at 5 59 39 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/d19e5b95-8254-4b37-91c6-f5af13d8249d">
+<img width="900" alt="Screen Shot 2024-05-27 at 5 59 39 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/d19e5b95-8254-4b37-91c6-f5af13d8249d">
 
 ### Distribution by Stroke
 
@@ -385,11 +392,13 @@ plt.figtext(0.5, 0.98, 'Distribution of stroke by categorical features',
 plt.show()
 ```
 
-<img width="715" alt="Screen Shot 2024-05-27 at 6 00 19 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/79ce2238-f342-4854-a285-1a1e47bd3bae">
+_Figure 3.4: Distribution of stroke by numerical features and categorical features_
+
+<img width="900" alt="Screen Shot 2024-05-27 at 6 00 19 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/79ce2238-f342-4854-a285-1a1e47bd3bae">
 
 <br>
 
-<img width="715" alt="Screen Shot 2024-05-27 at 6 00 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ccd3066e-f014-44d2-b591-d5b03a879381">
+<img width="900" alt="Screen Shot 2024-05-27 at 6 00 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ccd3066e-f014-44d2-b591-d5b03a879381">
 
 ## Data Preprocessing
 
@@ -414,7 +423,9 @@ def show_values(df):
 show_values(train)
 ```
 
-<img width="355" alt="Screen Shot 2024-05-27 at 6 01 36 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/92bd98de-b0c8-48ca-9f8d-d38f2979dcae">
+_Table 4.1: Number and name of unique variables for each class of feature_
+
+<img width="650" alt="Screen Shot 2024-05-27 at 6 01 36 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/92bd98de-b0c8-48ca-9f8d-d38f2979dcae">
 
 ### Data Encoding
 
@@ -501,13 +512,17 @@ test.drop('work_type',axis=1,inplace=True)
 train
 ```
 
-<img width="891" alt="Screen Shot 2024-05-27 at 6 03 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/9d8516e8-7ab4-457e-b77b-f49f8ef0b26b">
+_Table 4.2: Data frame of training data set_
+
+<img width="1100" alt="Screen Shot 2024-05-27 at 6 03 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/9d8516e8-7ab4-457e-b77b-f49f8ef0b26b">
 
 ```
 test
 ```
 
-<img width="864" alt="Screen Shot 2024-05-27 at 6 03 44 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/9a132b02-3c31-4dc8-adf2-ae82c607676a">
+_Table 4.3: Data frame of testing data set_
+
+<img width="1100" alt="Screen Shot 2024-05-27 at 6 03 44 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/9a132b02-3c31-4dc8-adf2-ae82c607676a">
 
 ### Feature Engineering
 
@@ -773,19 +788,19 @@ test_scores_A, Amodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Amodels, x_train.columns, x_train, y_train)
 ```
 
-_Test Results for Each Classifier_
+_Table 5.1: Test Results for Each Classifier_
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 09 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/29d257c1-d213-4d55-a41b-3430fec7b918">
-
-<br>
-
-<img width="314" alt="Screen Shot 2024-05-27 at 6 10 04 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e324adec-2672-4560-8d6f-e9f9997c14ab">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 09 24 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/29d257c1-d213-4d55-a41b-3430fec7b918">
 
 <br>
 
-_Feature Importances for Each Classifier_
+<img width="525" alt="Screen Shot 2024-05-27 at 6 10 04 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e324adec-2672-4560-8d6f-e9f9997c14ab">
 
-<img width="498" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
+<br>
+
+_Figure 5.1: Feature Importances for Each Classifier_
+
+<img width="800" alt="Screen Shot 2024-05-27 at 6 06 48 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2edc2d1d-3057-4c2e-a5c7-fd22c3c29dcc">
 
 ### Cohort B
 
@@ -802,19 +817,19 @@ test_scores_B, Bmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Bmodels, x_train.columns, x_train, y_train)
 ```
 
-_Test Results for Each Classifier_
+_Table 5.2: Test Results for Each Classifier_
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 10 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f99e1a44-a3f0-4f83-bf1d-33d6510c5d00">
-
-<br>
-
-<img width="314" alt="Screen Shot 2024-05-27 at 6 10 42 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/beb1838e-8807-4926-95d1-c1006ddfe7ea">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 10 25 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f99e1a44-a3f0-4f83-bf1d-33d6510c5d00">
 
 <br>
 
-_Feature Importances for Each Classifier_
+<img width="525" alt="Screen Shot 2024-05-27 at 6 10 42 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/beb1838e-8807-4926-95d1-c1006ddfe7ea">
 
-<img width="504" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
+<br>
+
+_Figure 5.2: Feature Importances for Each Classifier_
+
+<img width="800" alt="Screen Shot 2024-05-27 at 6 08 31 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2bc2a40-02fd-4d06-90d4-d685822f7e65">
 
 ### Cohort C
 
@@ -831,23 +846,23 @@ test_scores_C, Cmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Cmodels, x_train.columns, x_train, y_train)
 ```
 
-_Test Results for Each Classifier_
+_Table 5.3: Test Results for Each Classifier_
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 11 30 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a1c60f20-1446-4775-bab0-0010631a6b11">
-
-<br>
-
-<img width="314" alt="Screen Shot 2024-05-27 at 6 11 50 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b52c0238-8c19-45ed-82f5-0be5f972e328">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 11 30 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a1c60f20-1446-4775-bab0-0010631a6b11">
 
 <br>
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 12 20 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/3675c0e2-13b4-4f1e-bb72-40c2094223fe">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 11 50 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b52c0238-8c19-45ed-82f5-0be5f972e328">
 
 <br>
 
-_Feature Importances for Each Classifier_
+<img width="525" alt="Screen Shot 2024-05-27 at 6 12 20 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/3675c0e2-13b4-4f1e-bb72-40c2094223fe">
 
-<img width="501" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
+<br>
+
+_Figure 5.3: Feature Importances for Each Classifier_
+
+<img width="800" alt="Screen Shot 2024-05-27 at 6 08 49 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/ef489cce-9c37-4274-82f9-93c4486cb36c">
 
 ### Cohort D
 
@@ -864,19 +879,19 @@ test_scores_D, Dmodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Dmodels, x_train.columns, x_train, y_train)
 ```
 
-_Test Results for Each Classifier_
+_Table 5.4: Test Results for Each Classifier_
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 13 06 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/96e8a287-c0c8-41c1-894d-a3d5e460a358">
-
-<br>
-
-<img width="314" alt="Screen Shot 2024-05-27 at 6 13 26 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e7c6af49-2a76-4be8-bb09-fedae3a59f46">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 13 06 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/96e8a287-c0c8-41c1-894d-a3d5e460a358">
 
 <br>
 
-_Feature Importances for Each Classifier_
+<img width="525" alt="Screen Shot 2024-05-27 at 6 13 26 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/e7c6af49-2a76-4be8-bb09-fedae3a59f46">
 
-<img width="498" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
+<br>
+
+_Figure 5.4: Feature Importances for Each Classifier_
+
+<img width="800" alt="Screen Shot 2024-05-27 at 6 12 41 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/99c44dcf-98c6-4d90-9760-0abadaeab0ef">
 
 ### Cohort E
 
@@ -893,23 +908,23 @@ test_scores_E, Emodels = build_test_models(x_train, y_train, x_valid, y_valid, x
 feature_importances(Emodels, x_train.columns, x_train, y_train)
 ```
 
-_Test Results for Each Classifier_
+_Table 5.5: Test Results for Each Classifier_
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 14 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a6f6db96-2a30-433b-9e3d-5ac74727ff5d">
-
-<br>
-
-<img width="314" alt="Screen Shot 2024-05-27 at 6 14 47 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2973e07f-d9ba-4ec5-aa9d-0733f43c3275">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 14 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a6f6db96-2a30-433b-9e3d-5ac74727ff5d">
 
 <br>
 
-<img width="314" alt="Screen Shot 2024-05-27 at 6 15 05 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2c17e05-2273-4929-9e69-72ead863342c">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 14 47 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/2973e07f-d9ba-4ec5-aa9d-0733f43c3275">
 
 <br>
 
-_Feature Importances for Each Classifier_
+<img width="525" alt="Screen Shot 2024-05-27 at 6 15 05 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/b2c17e05-2273-4929-9e69-72ead863342c">
 
-<img width="495" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
+<br>
+
+_Figure 5.5: Feature Importances for Each Classifier_
+
+<img width="800" alt="Screen Shot 2024-05-27 at 6 14 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/11fa117a-20ce-4778-a0fb-fd18f908cc9e">
 
 ### Model Comparisons
 
@@ -930,7 +945,9 @@ print("=========================================================================
 print("\n A: none \n B: age*bmi \n C: age*avg_glucose_level \n D: bmi*avg_glucose_level \n E: B,C,D together")
 ```
 
-<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+_Table 5.6: Comparison of testing accuracy for each classifier and cohort_ 
+
+<img width="600" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
 
 ## Using Tabnet Architecture
 
@@ -966,7 +983,9 @@ print("_______________________________________________")
 print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 ```
 
-<img width="318" alt="Screen Shot 2024-05-27 at 6 16 08 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a91e7f13-b6b0-4d69-b42c-58d6b4049e3c">
+_Table 6.1: Performance result for Tabnet Classifier_
+
+<img width="525" alt="Screen Shot 2024-05-27 at 6 16 08 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/a91e7f13-b6b0-4d69-b42c-58d6b4049e3c">
 
 ### Cohort 1
 
@@ -996,7 +1015,9 @@ print("_______________________________________________")
 print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 ```
 
-<img width="318" alt="Screen Shot 2024-05-27 at 6 16 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/13dc0c1c-a9d5-44ff-ad63-9929037f6d05">
+_Table 6.2: Performance result for Tabnet Classifier_
+
+<img width="525" alt="Screen Shot 2024-05-27 at 6 16 33 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/13dc0c1c-a9d5-44ff-ad63-9929037f6d05">
 
 ### Cohort 2
 
@@ -1026,7 +1047,9 @@ print("_______________________________________________")
 print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 ```
 
-<img width="322" alt="Screen Shot 2024-05-27 at 6 16 59 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/57138744-ec66-44da-8a17-2113d576fff2">
+_Table 6.3: Performance result for Tabnet Classifier_
+
+<img width="525" alt="Screen Shot 2024-05-27 at 6 16 59 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/57138744-ec66-44da-8a17-2113d576fff2">
 
 ### Cohort 3
 
@@ -1056,9 +1079,13 @@ print("_______________________________________________")
 print(f"Confusion Matrix: \n {confusion_matrix(y_test, pred)}\n")
 ```
 
-<img width="316" alt="Screen Shot 2024-05-27 at 6 17 22 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f23b8af3-66af-48ef-8cb8-87b3c52e5987">
+_Table 6.4: Performance result for Tabnet Classifier_
+
+<img width="525" alt="Screen Shot 2024-05-27 at 6 17 22 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/f23b8af3-66af-48ef-8cb8-87b3c52e5987">
 
 ### Tabnet Comparisons
+
+_Table 6.5: Tabnet Classifier Accuracy Comparisons_
 
 ```
 print("\nTest Testing Accuracy for TabNet with Various Parameters: ")
@@ -1071,17 +1098,17 @@ print("==========================================================")
 print("\n 0: Original \n 1: SGB optimizer \n 2: Small batchsize \n 3: Small StepSize, Big Gamma")
 ```
 
-<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
+<img width="525" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
 
 ## Conclusions
 
 To summarize the results, with Random Forest, Cohort E (all the engineered features together) performed the best with an accuracy of 95.77. With XGBoost, Cohort A (no features engineered) performed the best with an accuracy of 95.28. With Logistic Regression, Cohort B (age*BMI) performed the best with an accuracy of 95.81. With Tabnet, Cohort E performed the best with an accuracy of 89.15. And within all the classifiers, Logistic Regression had the best overal accuracy values, with Cohort B in Logistic Regression giving the highest accuracy amongst all the models. 
 
-<img width="356" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
+<img width="650" alt="Screen Shot 2024-05-27 at 6 15 29 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/52df6924-8e1f-4ee3-b449-25fa9be8507f">
 
 To summarize the results for Tabnet, Cohort 0 had the highest accuracy. 
 
-<img width="259" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
+<img width="475" alt="Screen Shot 2024-05-27 at 6 17 55 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/867a4a3d-fef6-4eeb-985d-d8f39693fa1b">
 
 Other considerations. 
 
