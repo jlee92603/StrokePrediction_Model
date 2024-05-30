@@ -76,7 +76,7 @@ Important libraries to install are:
 * pytorch_tabnet
 
 ### Downloading Dataset
-The brain tumor dataset is acquired from Kaggle [Kaggle Stroke Prediction Tabular Dataset](https://www.kaggle.com/competitions/playground-series-s3e2/overview). This dataset includes 2 csv files, a training data set where stroke is the binary target and a testing data set where the objective is to predict the probability of positive stroke. The training data csv file consists of tabular data with 10 features for each of the 15304 patients: gender, age, hypertension, heart disease, marriage status, work type, residence type, average glucose level, BMI, and smoking status, and whether the patient has stroke or not. 
+The brain tumor dataset is acquired from [Kaggle Stroke Prediction Tabular Dataset](https://www.kaggle.com/competitions/playground-series-s3e2/overview). This dataset includes 2 csv files, a training data set where stroke is the binary target and a testing data set where the objective is to predict the probability of positive stroke. The training data csv file consists of tabular data with 10 features for each of the 15304 patients: gender, age, hypertension, heart disease, marriage status, work type, residence type, average glucose level, BMI, and smoking status, and whether the patient has stroke or not. 
 
 ### Connecting Drive and GPU
 The dataset is downloaded and uploaded on to Google Drive, which is connected to the Colab notebook. Additionally, Google Colab's T4 GPU is connected for faster model fitting. Google Colab's GPU can be connected by changing runtime type. 
