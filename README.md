@@ -145,13 +145,13 @@ _Table 2.1: First couple patient data displayed_
 
 <img width="1100" alt="Screen Shot 2024-05-27 at 4 51 07 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/fefa3286-09bd-4158-9d67-6302dea6971f">
 
-<br>
+<br><br>
 
 _Table 2.2: Variables in Dataset_
 
-<img width="500" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
+<img width="450" alt="Screen Shot 2024-05-27 at 6 28 11 PM" src="https://github.com/jlee92603/StrokePrediction_Model/assets/70551445/48e0ce35-02f4-487a-951d-94bc4038f41f">
 
-<br>
+<br><br>
 
 _Table 2.3: Statistics for Training Dataset_
 
