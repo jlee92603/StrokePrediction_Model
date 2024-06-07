@@ -16,7 +16,7 @@ Data encoding is necessary when dealing with tabular datasets as tabular dataset
 
 Feature engineering is the process of using domain knowledge to create new input features from raw data to improve the performance of the models. It involves transforming, selecting, and creating new variables that can help the model better understand patterns in the data. It can help improve model accuracy, handle heterogeneous data, deal with missing data, enhance interpretability, and improve generalization. In this project, interaction terms are generated, where several features were combined to capture interactions. For instance, there could be association between age and average glucose levels; hence, these two features would be multiplied to create a new feature that incorporates the relationship between the two variables. 
 
-In order to predict the event of stroke, Random Forst, XGBoost, Logistic Regression, and Tabnet learning algorithms are used. Random forest is an ensemble learning method that builds multiple decision trees. XGBoost is an advanced implementation of gradient boosting. It builds models in a stage-wise manner by sequentially adding new models that correct errors made by the previous models. Logistic regression is a statistical model that uses a logistic function to model a binary dependent variable. It predicts the probability of the outcome variable. Tabnet is a deep learning architecture specifically for tabular data. It incorporates the advantage of decision trees and neural networks to efficiently handle tabular datasets. 
+In order to predict the event of stroke, Random Forest, XGBoost, Logistic Regression, and Tabnet learning algorithms are used. Random forest is an ensemble learning method that builds multiple decision trees. XGBoost is an advanced implementation of gradient boosting. It builds models in a stage-wise manner by sequentially adding new models that correct errors made by the previous models. Logistic regression is a statistical model that uses a logistic function to model a binary dependent variable. It predicts the probability of the outcome variable. Tabnet is a deep learning architecture specifically for tabular data. It incorporates the advantage of decision trees and neural networks to efficiently handle tabular datasets. 
 
 Accuracy metrics are used for each cohort that tested various engineered features and hyperparameters. In summary, the results are as follows: 
 
@@ -112,7 +112,7 @@ from sklearn import preprocessing
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import ForestClassifier
 from xgboost import XGBClassifier
 
 import torch
@@ -562,10 +562,10 @@ def split_data(train):
   x = train.drop('stroke', axis=1)
 
   # split training and valid/test data
-  x_train, X, y_train, Y = train_test_split(x,y, test_size=0.5, random_state=0, shuffle=True)
+  x_train, X, y_train, Y = train_test_split(x,y, test_size=0.5, _state=0, shuffle=True)
 
   # split validation and test data
-  x_valid, x_test, y_valid, y_test = train_test_split(x,y, test_size=0.5, random_state=0, shuffle=True)
+  x_valid, x_test, y_valid, y_test = train_test_split(x,y, test_size=0.5, _state=0, shuffle=True)
 
   return x_train, y_train, x_valid, y_valid, x_test, y_test
 ```
@@ -626,7 +626,7 @@ score=[]
 ### Score Comparison Function
 
 ```
-# function to compare logistic regression, random forest, xgb accuracy
+# function to compare logistic regression,  forest, xgb accuracy
 def compare_scores(x_test, y_test, rf, xgb, lgr, metric=accuracy_score):
 
   # random forest score
@@ -701,7 +701,7 @@ def build_test_models(x_train, y_train, x_valid, y_valid, x_test, y_test, metric
   test_scores.append(score*100)
 
   # scores for each model as data frame
-  results_df = pd.DataFrame(data=[['Random Forrest',test_scores[0]],
+  results_df = pd.DataFrame(data=[['Random Forest',test_scores[0]],
                                   ['XGB',test_scores[1]],
                                   ["Logistic Regression", test_scores[2]],
                                   ['TabNet', test_scores[3]]],
@@ -934,7 +934,7 @@ test_scores = [test_scores_A, test_scores_B, test_scores_C, test_scores_D, test_
 print("\nTest Testing Accuracy for Various Classifier with Different DataSets: ")
 print("===============================================================================")
 
-comparison_result = pd.DataFrame(data=[['Random Forrest',test_scores[0][0], test_scores[1][0], test_scores[2][0], test_scores[3][0], test_scores[4][0]],
+comparison_result = pd.DataFrame(data=[['Random Forest',test_scores[0][0], test_scores[1][0], test_scores[2][0], test_scores[3][0], test_scores[4][0]],
                                   ['XGB',test_scores[0]
                                   [1], test_scores[1][1], test_scores[2][1], test_scores[3][1], test_scores[4][1]],
                                   ["Logistic Regression", test_scores[0][2], test_scores[1][2], test_scores[2][2], test_scores[3][2], test_scores[4][2]],
